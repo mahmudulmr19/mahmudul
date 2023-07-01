@@ -19,7 +19,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="mb-4 text-[#3ccf91] text-4xl font-semibold"
+            className="mb-4 text-[#3ccf91] text-3xl md:text-4xl font-semibold"
           >
             Hey there!, I&apos;m
           </motion.h1>
@@ -27,7 +27,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="font-bold text-white text-6xl"
+            className="font-bold text-white text-5xl md:text-6xl"
           >
             Mahmudul Hasan
           </motion.h2>
@@ -35,7 +35,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.7 }}
-            className="text-2xl mt-4 font-semibold text-gray-400 max-w-screen-sm mx-auto"
+            className="text-xl md:text-2xl mt-4 font-semibold text-gray-400 max-w-screen-sm mx-auto"
           >
             <motion.span
               initial={{ opacity: 0 }}
@@ -51,7 +51,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.1 }}
-            className="text-lg text-gray-400 mt-4"
+            className="md:text-lg text-gray-400 mt-4"
           >
             🚀 Exploring opportunities and side projects.
             <br />
