@@ -23,8 +23,11 @@ const Header = () => {
           <Link href="/#skills" className="hover:text-gray-200 transition-all">
             Skills
           </Link>
-          <Link href="/#project" className="hover:text-gray-200 transition-all">
-            Project
+          <Link
+            href="/#projects"
+            className="hover:text-gray-200 transition-all"
+          >
+            Projects
           </Link>
           <Link href="/#blogs" className="hover:text-gray-200 transition-all">
             Blogs
