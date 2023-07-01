@@ -1,12 +1,20 @@
+"use client";
 import React from "react";
 import Container from "./Container";
 import Link from "next/link";
 import Image from "next/image";
 import Menu from "./Menu";
 import { AiOutlineDownload } from "react-icons/ai";
+import { motion } from "framer-motion";
+
 const Header = () => {
   return (
-    <header className="fixed top-0 z-50 h-20 w-full border-b border-gray-100/10 bg-gray-900/40 backdrop-blur">
+    <motion.header
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+      className="fixed top-0 z-50 h-20 w-full border-b border-gray-100/10 bg-gray-900/40 backdrop-blur"
+    >
       <Container className="flex items-center justify-between my-auto h-full text-[#f8fafc]">
         <Link href="/">
           <Image
@@ -40,7 +48,7 @@ const Header = () => {
           <Menu />
         </div>
       </Container>
-    </header>
+    </motion.header>
   );
 };
 
