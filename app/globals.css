@@ -4,5 +4,5 @@
 
 html,
 body {
-  @apply w-full h-full;
+  @apply w-full h-full scroll-smooth bg-gray-900 bg-gradient-to-b from-black/40 to-black/40;
 }
