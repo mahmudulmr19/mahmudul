@@ -37,8 +37,8 @@ const Header = () => {
           >
             Projects
           </Link>
-          <Link href="/#blogs" className="hover:text-gray-200 transition-all">
-            Blogs
+          <Link href="/#contact" className="hover:text-gray-200 transition-all">
+            Contact
           </Link>
         </div>
         <div className="flex items-center">

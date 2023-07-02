@@ -69,10 +69,10 @@ const Menu = () => {
           </Link>
           <Link
             onClick={() => setIsOpen(false)}
-            href="/#blogs"
+            href="/#contact"
             className="w-full block px-4 py-2 rounded hover:bg-gray-800 transition-all"
           >
-            Blogs
+            Contact
           </Link>
         </div>
       </Drawer>
