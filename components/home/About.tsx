@@ -6,7 +6,7 @@ import Image from "next/image";
 import aboutImage from "@/assets/about.jpg";
 const About = () => {
   return (
-    <Container className="mt-40">
+    <Container className="mt-40" id="about">
       <div className="mt-12 flex flex-col lg:flex-row items-center justify-center gap-8 text-white">
         <motion.div
           className="w-full max-w-md"

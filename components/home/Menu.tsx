@@ -30,7 +30,7 @@ const Menu = () => {
         }}
       >
         <div className="p-5 flex items-center justify-between border-b border-gray-600/70">
-          <Link href="/">
+          <Link href="/" onClick={() => setIsOpen(false)}>
             <Image
               src="/logo.svg"
               alt="Mahmudul Hasan Logo"
@@ -47,24 +47,28 @@ const Menu = () => {
         </div>
         <div className="p-5 transition-all flex flex-col gap-3">
           <Link
+            onClick={() => setIsOpen(false)}
             href="/#about"
             className="w-full block px-4 py-2 rounded hover:bg-gray-800 transition-all"
           >
             About
           </Link>
           <Link
+            onClick={() => setIsOpen(false)}
             href="/#skills"
             className="w-full block px-4 py-2 rounded hover:bg-gray-800 transition-all"
           >
             Skills
           </Link>
           <Link
+            onClick={() => setIsOpen(false)}
             href="/#projects"
             className="w-full block px-4 py-2 rounded hover:bg-gray-800 transition-all"
           >
             Projects
           </Link>
           <Link
+            onClick={() => setIsOpen(false)}
             href="/#blogs"
             className="w-full block px-4 py-2 rounded hover:bg-gray-800 transition-all"
           >
