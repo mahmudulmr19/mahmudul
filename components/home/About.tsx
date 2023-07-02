@@ -34,6 +34,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1 }}
+            viewport={{ once: true }}
           >
             I&apos;m Mahmudul Hasan, a 15-year-old web developer passionate
             about coding. I&apos;ve mastered HTML, CSS, JavaScript, React,
@@ -46,6 +47,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1 }}
             className="text-[#8f9094]"
+            viewport={{ once: true }}
           >
             Despite my age, I&apos;m driven and committed to delivering
             high-quality web solutions. I believe in the transformative power of
@@ -57,6 +59,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1 }}
             className="text-[#8f9094]"
+            viewport={{ once: true }}
           >
             Continuous learning is key for me. I stay updated with the latest
             web technologies through courses and hands-on projects. Growth is
