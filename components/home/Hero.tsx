@@ -43,7 +43,7 @@ const Hero = () => {
               transition={{ duration: 1, delay: 0.9 }}
               className="text-white"
             >
-              Software Developer.
+              Web Developer.
             </motion.span>{" "}
             A self-taught developer with an interest in Computer Science.
           </motion.h3>
