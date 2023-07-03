@@ -30,7 +30,13 @@ const Menu = () => {
         }}
       >
         <div className="p-5 flex items-center justify-between border-b border-gray-600/70">
-          <Link href="/" onClick={() => setIsOpen(false)}>
+          <Link
+            href="/"
+            onClick={() => {
+              setIsOpen(false);
+              window.scrollTo(0, 0);
+            }}
+          >
             <Image
               src="/logo.svg"
               alt="Mahmudul Hasan Logo"

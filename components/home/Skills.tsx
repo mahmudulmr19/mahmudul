@@ -9,7 +9,13 @@ import Image from "next/image";
 const Skills = () => {
   return (
     <Container className="mt-40" id="skills">
-      <motion.h2 className="text-white font-semibold text-2xl md:text-3xl lg:text-4xl">
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, delay: 0.3 }}
+        className="text-white font-semibold text-2xl md:text-3xl lg:text-4xl"
+      >
         Skills
       </motion.h2>
       <ul className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
