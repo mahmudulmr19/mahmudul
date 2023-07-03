@@ -1,5 +1,12 @@
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import LoginForm from "./LoginForm";
+
+export const metadata = {
+  title: "Login | Mahmudul Hasan",
+  description: "Sign in to your account.",
+};
 
 export default function Login() {
   return (
@@ -21,39 +28,7 @@ export default function Login() {
             <h1 className="text-xl font-bold leading-tight tracking-tight md:text-2xl text-white">
               Sign in to your account
             </h1>
-            <form className="space-y-4 md:space-y-6" action="#">
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-white">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded focus:outline-none focus:border-[#3ccf91] text-white"
-                  placeholder="Email"
-                  required
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="password" className="text-white">
-                  Password
-                </label>
-                <input
-                  type="password"
-                  id="password"
-                  className="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded focus:outline-none focus:border-[#3ccf91] text-white"
-                  placeholder="Password"
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full text-white bg-[#3ccf91] hover:bg-[#35bb83] transition-all py-2 rounded"
-              >
-                Sign in
-              </button>
-            </form>
+            <LoginForm />
           </div>
         </div>
       </div>
