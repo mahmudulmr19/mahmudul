@@ -2,13 +2,14 @@
 import React, { FormEvent, ChangeEvent, useState } from "react";
 import { auth } from "@/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Toaster, toast } from "react-hot-toast";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+  const query = useSearchParams();
 
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
@@ -23,8 +24,9 @@ const LoginForm = () => {
 
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
+        const from = query.get("next") || "/dashboard/home";
         toast.success("Login successfully!");
-        router.push("/dashboard/home");
+        router.push(from);
       })
       .catch((err) => {
         console.clear();

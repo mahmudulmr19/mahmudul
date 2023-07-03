@@ -1,3 +1,6 @@
+import AuthProvider from "@/context/AuthProvider";
+import UserOnly from "@/routes/UserOnly";
+
 export const metadata = {
   title: "Dashboard | Mahmudul Hasan",
 };
@@ -6,5 +9,9 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <div>{children}</div>;
+  return (
+    <AuthProvider>
+      <UserOnly>{children}</UserOnly>
+    </AuthProvider>
+  );
 }
