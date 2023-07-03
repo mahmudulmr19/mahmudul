@@ -3,7 +3,7 @@ import React, { FormEvent } from "react";
 import Container from "./Container";
 import Link from "next/link";
 import { FaLinkedin, FaGithub, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
-
+import { MdLocationOn } from "react-icons/md";
 const Contact: React.FC = () => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -27,11 +27,15 @@ const Contact: React.FC = () => {
             <div className="text-white space-y-2">
               <div className="flex items-center">
                 <FaEnvelope color="#3ccf91" className="mr-2" />
-                <p>your-email@example.com</p>
+                <p>mahmudulmr19.com</p>
               </div>
               <div className="flex items-center">
                 <FaPhoneAlt color="#3ccf91" className="mr-2" />
-                <p>+1 123-456-7890</p>
+                <p>+8801602051672</p>
+              </div>
+              <div className="flex items-center text-lg">
+                <MdLocationOn color="#3ccf91" className="mr-2" />
+                <p>Rangpur District, Rangpur - 5400, Bangladesh</p>
               </div>
             </div>
             <div className="flex space-x-4 mt-4">

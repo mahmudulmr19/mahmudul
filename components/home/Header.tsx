@@ -87,9 +87,13 @@ const Header: React.FC = () => {
           </motion.a>
         </div>
         <div className="flex items-center">
-          <button className="bg-white px-4 py-1.5 text-gray-600 rounded text-sm font-medium hover:text-gray-800 transition-all inline-flex items-center gap-2">
+          <motion.a
+            href="/Resume.pdf"
+            download="Mahmudul Hasan Resume"
+            className="bg-white px-4 py-1.5 text-gray-600 rounded text-sm font-medium hover:text-gray-800 transition-all inline-flex items-center gap-2"
+          >
             Resume <AiOutlineDownload />
-          </button>
+          </motion.a>
           <Menu />
         </div>
       </Container>
