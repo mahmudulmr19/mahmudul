@@ -1,13 +1,47 @@
 "use client";
-import React, { FormEvent } from "react";
+import React, { FormEvent, useState } from "react";
 import Container from "./Container";
 import Link from "next/link";
 import { FaLinkedin, FaGithub, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 const Contact: React.FC = () => {
-  const handleSubmit = (e: FormEvent) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [emailSendMessage, setEmailSendMessage] = useState("");
+  const [emailErrorMessage, setEmailErrorMessage] = useState("");
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission logic
+
+    setEmailSendMessage("");
+    setEmailErrorMessage("");
+
+    setLoading(true);
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, subject, message }),
+      });
+
+      if (response.ok) {
+        setEmailSendMessage("Email sent successfully!");
+        setLoading(false);
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+      }
+    } catch (error) {
+      setEmailErrorMessage("Failed to send email");
+      setLoading(false);
+    }
   };
 
   return (
@@ -27,7 +61,7 @@ const Contact: React.FC = () => {
             <div className="text-white space-y-2">
               <div className="flex items-center">
                 <FaEnvelope color="#3ccf91" className="mr-2" />
-                <p>mahmudulmr19.com</p>
+                <p>mahmudulmr19@gmail.com</p>
               </div>
               <div className="flex items-center">
                 <FaPhoneAlt color="#3ccf91" className="mr-2" />
@@ -72,6 +106,8 @@ const Contact: React.FC = () => {
                   type="text"
                   id="name"
                   name="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   className="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded focus:outline-none focus:border-[#3ccf91] text-white"
                   placeholder="Your Name"
                   required
@@ -82,6 +118,8 @@ const Contact: React.FC = () => {
                   type="email"
                   id="email"
                   name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded focus:outline-none focus:border-[#3ccf91] text-white"
                   placeholder="Your Email"
                   required
@@ -92,6 +130,8 @@ const Contact: React.FC = () => {
                   type="text"
                   id="subject"
                   name="subject"
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
                   className="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded focus:outline-none focus:border-[#3ccf91] text-white"
                   placeholder="Subject"
                   required
@@ -102,6 +142,8 @@ const Contact: React.FC = () => {
                   id="message"
                   name="message"
                   rows={4}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   className="w-full px-4 py-2 resize-none bg-gray-800 border border-gray-600 rounded focus:outline-none focus:border-[#3ccf91] text-white"
                   placeholder="Your Message"
                   required
@@ -112,10 +154,19 @@ const Contact: React.FC = () => {
                   type="submit"
                   className="py-2 px-4 bg-[#3ccf91] text-white rounded hover:bg-[#29b47b] transition-colors duration-300"
                 >
-                  Send Message
+                  {loading ? (
+                    <AiOutlineLoading3Quarters
+                      className="animate-spin text-lg"
+                      color="#fff"
+                    />
+                  ) : (
+                    "Send Message"
+                  )}
                 </button>
               </div>
             </div>
+            <p className="text-green-500 mt-4">{emailSendMessage}</p>
+            <p className="text-red-500 mt-4">{emailErrorMessage}</p>
           </form>
         </div>
       </div>
