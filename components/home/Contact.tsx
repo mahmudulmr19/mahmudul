@@ -11,7 +11,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <Container id="contact" className="mt-40">
+    <Container id="contact" className="mt-40 pb-5">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Left side: Info and social links */}
         <div>
@@ -25,8 +25,6 @@ const Contact: React.FC = () => {
           <div className="mt-6">
             {/* Your information and social links */}
             <div className="text-white space-y-2">
-              <p>Mahmudul Hasan</p>
-              <p>Web Developer</p>
               <div className="flex items-center">
                 <FaEnvelope color="#3ccf91" className="mr-2" />
                 <p>your-email@example.com</p>
@@ -66,9 +64,6 @@ const Contact: React.FC = () => {
           <form onSubmit={handleSubmit} className="mt-4">
             <div className="space-y-4">
               <div className="space-y-2">
-                <label htmlFor="name" className="text-white">
-                  Name
-                </label>
                 <input
                   type="text"
                   id="name"
@@ -79,9 +74,6 @@ const Contact: React.FC = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="email" className="text-white">
-                  Email
-                </label>
                 <input
                   type="email"
                   id="email"
@@ -92,9 +84,6 @@ const Contact: React.FC = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="subject" className="text-white">
-                  Subject
-                </label>
                 <input
                   type="text"
                   id="subject"
@@ -105,19 +94,16 @@ const Contact: React.FC = () => {
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="message" className="text-white">
-                  Message
-                </label>
                 <textarea
                   id="message"
                   name="message"
                   rows={4}
-                  className="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded focus:outline-none focus:border-[#3ccf91] text-white"
+                  className="w-full px-4 py-2 resize-none bg-gray-800 border border-gray-600 rounded focus:outline-none focus:border-[#3ccf91] text-white"
                   placeholder="Your Message"
                   required
                 ></textarea>
               </div>
-              <div>
+              <div className="text-right">
                 <button
                   type="submit"
                   className="py-2 px-4 bg-[#3ccf91] text-white rounded hover:bg-[#29b47b] transition-colors duration-300"
